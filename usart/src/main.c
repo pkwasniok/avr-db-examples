@@ -3,13 +3,24 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+#include "./usart.h"
+
+volatile char data[] = "Hello, world!\r\n";
+
 int main(void)
 {
-    PORTD.DIRSET |= PIN7_bm;
-    VPORTA.OUT |= PIN7_bm;
+    // Configure USART0 Tx pin as output
+    PORTA.DIRSET |= (1<<0);
+
+    // Initialize USART0
+    usart_init(&USART0, 9600);
 
     while (1) {
-        PORTD.OUTTGL |= PIN7_bm;
-        _delay_ms(500);
+        char *pointer = data;
+        while (*pointer != '\0') {
+            usart_write(&USART0, *(pointer++));
+        }
+
+        _delay_ms(1000);
     }
 }

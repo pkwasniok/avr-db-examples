@@ -31,7 +31,7 @@ clean:
 firmware.bin: firmware.elf
 	$(OBJCOPY) -O binary $(OUTDIR)/firmware.elf $(OUTDIR)/firmware.bin
 
-firmware.elf: src/main.o
+firmware.elf: src/main.o src/usart.o
 	$(GCC) $(CFLAGS) $(addprefix $(OUTDIR)/, $(^)) -o $(OUTDIR)/$(@)
 
 %.o: %.c
