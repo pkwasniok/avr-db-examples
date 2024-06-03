@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/avr-gcc",
+    "C_Cpp.default.forcedInclude": [
+        "${workspaceFolder}/lib/atpack/include/avr/ioavr128db28.h",
+    ],
+    "C_Cpp.default.includePath": [
+        "/usr/avr/**",
+        "${workspaceFolder}/**"
+    ]
+}

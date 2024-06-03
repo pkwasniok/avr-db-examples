@@ -1,0 +1,17 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git": "latest",
+        "ghcr.io/devcontainers/features/github-cli": "latest"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "christian-kohler.path-intellisense"
+            ]
+        }
+    }
+}
